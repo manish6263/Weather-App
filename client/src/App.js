@@ -17,25 +17,25 @@ import NewsPage from './pages/NewsPage';
 function App() {
   return (
     <>
-        <WeatherProvider>
-          <Router>
-            <Header />
-            <Routes>
-              <Route exact path='/' element={<Home />} />
-              <Route exact path='/weather' element={<PrivateRoute />}>
-                <Route exact path='/weather' element={<Weather />} />
-              </Route>
-              <Route exact path='/news' element={<PrivateRoute />}>
-                <Route exact path='/news' element={<NewsPage />} />
-              </Route>
-              <Route exact path='/login' element={<Login />} />
-              <Route exact path='/register' element={<Register />} />
-              <Route exact path='/about' element={<About />} />
-              <Route path='/*' element={<NotFound />} />
-            </Routes>
-            <Footer />
-          </Router>
-        </WeatherProvider>
+      <WeatherProvider>
+        <Router>
+          <Header />
+          <Routes>
+            <Route exact path='/' element={<Home />} />
+            {/* <Route exact path='/weather' element={<PrivateRoute />}> */}
+            <Route exact path='/weather' element={<Weather />} />
+            {/* </Route> */}
+            <Route exact path='/news' element={<PrivateRoute />}>
+              <Route exact path='/news' element={<NewsPage />} />
+            </Route>
+            <Route exact path='/login' element={<Login />} />
+            <Route exact path='/register' element={<Register />} />
+            <Route exact path='/about' element={<About />} />
+            <Route path='/*' element={<NotFound />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </WeatherProvider>
       <ToastContainer />
     </>
   );
